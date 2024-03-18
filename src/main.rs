@@ -1,3 +1,11 @@
+pub mod graphics;
+use graphics::window::{Window};
+
 fn main() {
-    println!("Hello, world!");
+    let mut window = Window::new(480, 480, "Matt smells");
+    window.init_gl();
+
+    while !window.should_close() {
+        window.update();
+    }
 }
